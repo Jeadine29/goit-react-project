@@ -16,6 +16,9 @@ body {
 :root {
   /* fonts */
   --font-suisse-intl: "Suisse Intl";
+  --mobile: 375px;
+  --tablet: 768px;
+  --desktop: 1440px;
 
   /* font sizes */
   --font-size-base: 16px;
@@ -84,3 +87,4 @@ body {
   --br-8xs: 5px;
   --br-xl: 20px;
 }
+

@@ -1,0 +1,9 @@
+.homeChild {
+  position: absolute;
+  top: 132px;
+  left: 100px;
+  border-radius: var(--br-xl);
+  width: 611px;
+  height: 568px;
+  object-fit: cover;
+}
