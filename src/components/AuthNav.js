@@ -1,13 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import styles from "./AuthNav.module.css";
 
-const AuthNav = () => {
+const AuthNav = ({ className = "" }) => {
   return (
-    <nav>
-      <Link to="/register">Register</Link>
-      <Link to="/login">Login</Link>
-    </nav>
+    <div className={[styles.btns, className].join(" ")}>
+      <button className={styles.signUp}>
+        <a className={styles.signUp1}>Sign Up</a>
+      </button>
+      <button className={styles.signIn}>
+        <a className={styles.signIn1}>Sign In</a>
+      </button>
+    </div>
   );
+};
+
+AuthNav.propTypes = {
+  className: PropTypes.string,
 };
 
 export default AuthNav;

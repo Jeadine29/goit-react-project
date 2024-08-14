@@ -1,15 +1,32 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from '../redux/authSlice';
+import PropTypes from "prop-types";
+import styles from "./UserBarBtn.module.css";
 
-const UserBarBtn = () => {
-  const dispatch = useDispatch();
+const UserBarBtn = ({ className = "" }) => {
+  return (
+    <div className={[styles.user, className].join(" ")}>
+      <img
+        className={styles.imageIcon}
+        loading="lazy"
+        alt=""
+        src="/image@2x.png"
+      />
+      <div className={styles.alexRybachokWrapper}>
+        <a className={styles.alexRybachok}>Alex Rybachok</a>
+      </div>
+      <div className={styles.chevronDownWrapper}>
+        <img
+          className={styles.chevronDownIcon}
+          loading="lazy"
+          alt=""
+          src="/chevrondown.svg"
+        />
+      </div>
+    </div>
+  );
+};
 
-  const handleLogout = () => {
-    dispatch(logoutUser());
-  };
-
-  return <button onClick={handleLogout}>Logout</button>;
+UserBarBtn.propTypes = {
+  className: PropTypes.string,
 };
 
 export default UserBarBtn;

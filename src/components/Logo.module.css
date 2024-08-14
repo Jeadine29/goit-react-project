@@ -1,0 +1,26 @@
+.icon {
+  width: 27px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.expensetracker {
+  position: relative;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.logo {
+  position: absolute;
+  top: 32px;
+  left: calc(50% - 113px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-5xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-suisse-intl);
+}

@@ -1,0 +1,262 @@
+.icon {
+  width: 27px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) 0 0;
+}
+.expensetracker {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: inherit;
+}
+.frameParent,
+.signInInner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.frameParent {
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.signInInner {
+  width: 970px;
+  justify-content: center;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-suisse-intl);
+}
+.sidebarContent,
+.sidebarDividerIcon {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+}
+.sidebarDividerIcon {
+  height: 568px;
+  border-radius: var(--br-xl);
+  overflow: hidden;
+  object-fit: cover;
+}
+.sidebarContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 397px;
+}
+.signIn1,
+.welcomeBackTo {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.signIn1 {
+  margin: 0;
+  width: 170px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+}
+.welcomeBackTo {
+  align-self: stretch;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+}
+.authHeader {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.email1 {
+  width: 41px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-suisse-intl);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 24px;
+  position: relative;
+  line-height: 24px;
+  color: var(--color-gray-500);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+}
+.email {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  border: 1px solid var(--color-gray-600);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) var(--padding-lg);
+}
+.password1 {
+  width: 72px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-suisse-intl);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 24px;
+  position: relative;
+  line-height: 24px;
+  color: var(--color-gray-500);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+}
+.eyeOffIcon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.eyeOffWrapper,
+.password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.password {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  border: 1px solid var(--color-gray-600);
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-lgi) var(--padding-3xs)
+    var(--padding-mid);
+  gap: var(--gap-xl);
+}
+.authContent,
+.authDetails,
+.inputFields {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.inputFields {
+  width: 399px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-5xl);
+  max-width: 100%;
+}
+.authContent,
+.authDetails {
+  align-self: stretch;
+}
+.authDetails {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-21xl);
+  max-width: 100%;
+}
+.authContent {
+  gap: 132px;
+}
+.authContent,
+.authContentWrapper,
+.sidebarContentParent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.authContentWrapper {
+  width: 419px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-lg) 0 0;
+  box-sizing: border-box;
+  min-width: 419px;
+}
+.sidebarContentParent {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--gap-35xl);
+  text-align: left;
+  font-size: var(--font-size-37xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-suisse-intl);
+}
+.signIn {
+  width: 1440px;
+  background-color: var(--color-gray-300);
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-13xl) 235px var(--padding-81xl) 121px;
+  box-sizing: border-box;
+  gap: var(--gap-55xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1225px) {
+  .authContentWrapper {
+    flex: 1;
+  }
+  .sidebarContentParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .authContentWrapper,
+  .sidebarContent {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .signIn1 {
+    font-size: var(--font-size-26xl);
+  }
+  .sidebarContentParent {
+    gap: var(--gap-8xl);
+  }
+  .signIn {
+    gap: var(--gap-18xl);
+    padding-left: 60px;
+    padding-right: 117px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .signIn1 {
+    font-size: var(--font-size-15xl);
+  }
+  .authDetails {
+    gap: var(--gap-xl);
+  }
+  .authContent {
+    gap: 66px;
+  }
+  .signIn {
+    gap: var(--gap-lg);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

@@ -1,13 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import styles from "./TransactionsHistoryNav.module.css";
 
-const TransactionsHistoryNav = () => {
+const TransactionsHistoryNav = ({ className = "" }) => {
   return (
-    <nav>
-      <Link to="/transactions/history/expenses">Expenses History</Link>
-      <Link to="/transactions/history/incomes">Incomes History</Link>
-    </nav>
+    <div className={[styles.allExpenseParent, className].join(" ")}>
+      <button className={styles.allExpense}>
+        <a className={styles.allExpense1}>All Expense</a>
+      </button>
+      <button className={styles.allIncome}>
+        <a className={styles.allIncome1}>All Income</a>
+      </button>
+    </div>
   );
+};
+
+TransactionsHistoryNav.propTypes = {
+  className: PropTypes.string,
 };
 
 export default TransactionsHistoryNav;

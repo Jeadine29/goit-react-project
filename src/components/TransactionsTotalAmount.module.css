@@ -1,0 +1,17 @@
+.totalIncomeParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-900);
+  font-family: var(--font-suisse-intl);
+}
+@media screen and (max-width: 750px) {
+  .totalIncomeParent {
+    flex-wrap: wrap;
+  }
+}

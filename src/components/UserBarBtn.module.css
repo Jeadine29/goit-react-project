@@ -1,0 +1,50 @@
+.imageIcon {
+  height: 44px;
+  width: 44px;
+  position: relative;
+  border-radius: var(--br-21xl);
+  object-fit: cover;
+}
+.alexRybachok {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: inherit;
+  display: inline-block;
+  min-width: 105px;
+  white-space: nowrap;
+}
+.alexRybachokWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-smi-5) 0 0;
+}
+.chevronDownIcon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.chevronDownWrapper,
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xs) 0 0;
+}
+.user {
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gray-200);
+  flex-direction: row;
+  padding: var(--padding-7xs) var(--padding-base);
+  gap: var(--gap-5xs);
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+  font-family: var(--font-suisse-intl);
+}

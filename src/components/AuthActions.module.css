@@ -1,0 +1,47 @@
+.signIn1 {
+  text-decoration: none;
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: -0.02em;
+  font-family: var(--font-suisse-intl);
+  color: var(--color-gray-300);
+  text-align: left;
+  display: inline-block;
+  min-width: 49px;
+}
+.signIn {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-sm) var(--padding-25xl);
+  background-color: var(--color-mediumspringgreen);
+  border-radius: var(--br-21xl);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.signIn:hover {
+  background-color: var(--color-limegreen);
+}
+.signUp {
+  text-decoration: underline;
+  color: var(--color-gray-100);
+}
+.label {
+  align-self: stretch;
+  position: relative;
+  line-height: 18px;
+}
+.authActions {
+  width: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+  font-family: var(--font-suisse-intl);
+}
