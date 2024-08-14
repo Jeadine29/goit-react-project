@@ -1,0 +1,427 @@
+.icon {
+  height: 16px;
+  width: 27px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.expensetracker {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: inherit;
+}
+.frame,
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-5xs);
+  z-index: unset;
+}
+.frame {
+  align-self: stretch;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 507px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-suisse-intl);
+}
+.valueBackgroundIcon {
+  width: 611px;
+  position: relative;
+  border-radius: var(--br-xl);
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.balanceValue {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: 100%;
+}
+.amountPlaceholderIcon {
+  height: 43px;
+  width: 43px;
+  position: relative;
+  border-radius: var(--br-smi);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.currencySymbol,
+.yourBalance {
+  position: relative;
+  display: inline-block;
+  min-width: 96px;
+}
+.currencySymbol {
+  font-size: var(--font-size-5xl);
+  color: #11101c;
+  min-width: 120px;
+  white-space: nowrap;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+}
+.amount {
+  position: relative;
+  display: inline-block;
+  min-width: 42px;
+}
+.amountValue,
+.balanceAmount {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.amountValue {
+  border-radius: var(--br-smi);
+  background-color: rgba(2, 177, 90, 0.15);
+  justify-content: center;
+  padding: 4px var(--padding-5xs);
+}
+.balanceAmount {
+  justify-content: flex-end;
+  padding: var(--padding-6xl) 0 0;
+  font-size: var(--font-size-xs);
+  color: #02b15a;
+}
+.balanceDetails,
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.balanceDetails {
+  overflow: hidden;
+  justify-content: flex-end;
+  gap: var(--gap-sm);
+}
+.block {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-100);
+  justify-content: flex-start;
+  padding: var(--padding-13xl) var(--padding-4xl);
+  gap: 22px;
+  z-index: 1;
+  margin-top: -253px;
+}
+.frame1 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-width: 430px;
+  min-height: 568px;
+  max-width: 100%;
+}
+.expenseLog {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: 0.2em;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: inherit;
+  display: inline-block;
+  min-width: 127px;
+}
+.manageYour {
+  color: var(--color-gray-100);
+}
+.finances {
+  text-decoration: underline;
+}
+.manageYourFinancesContainer {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-family: inherit;
+}
+.expensetrackerEffortlesslyEm {
+  width: 533px;
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: -0.02em;
+  color: var(--color-gray-800);
+  display: inline-block;
+  max-width: 100%;
+}
+.text1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  max-width: 100%;
+}
+.signUp1 {
+  text-decoration: none;
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: -0.02em;
+  font-family: var(--font-suisse-intl);
+  color: var(--color-gray-400);
+  text-align: left;
+  display: inline-block;
+  min-width: 57px;
+}
+.signUp {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-sm) var(--padding-25xl);
+  background-color: var(--color-mediumspringgreen);
+  border-radius: var(--br-21xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.signUp:hover {
+  background-color: #00bf54;
+}
+.signIn1 {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: -0.02em;
+  font-family: var(--font-suisse-intl);
+  color: var(--color-gray-100);
+  text-align: left;
+  display: inline-block;
+  min-width: 49px;
+}
+.signIn {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-800);
+  padding: var(--padding-xs) 43px;
+  background-color: transparent;
+  border-radius: var(--br-21xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.signIn:hover {
+  background-color: rgba(224, 224, 224, 0.09);
+  border: 1px solid rgba(224, 224, 224, 0.4);
+  box-sizing: border-box;
+}
+.block1,
+.block2,
+.btns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.btns {
+  flex-direction: row;
+  gap: var(--gap-xl);
+}
+.block1,
+.block2 {
+  align-self: stretch;
+  flex-direction: column;
+  max-width: 100%;
+}
+.block2 {
+  gap: 40px;
+  font-size: 56px;
+  color: var(--color-mediumspringgreen);
+}
+.block1 {
+  gap: var(--gap-3xs);
+}
+.imageIcon,
+.imageIcon1,
+.imageIcon2 {
+  height: 48px;
+  width: 48px;
+  position: relative;
+  border-radius: var(--br-21xl);
+  object-fit: cover;
+  min-height: 48px;
+}
+.imageIcon1,
+.imageIcon2 {
+  z-index: 1;
+  margin-left: -9px;
+}
+.imageIcon2 {
+  z-index: 2;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+.trustedByUsers,
+.users1 {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.trustedByUsers {
+  align-self: stretch;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-800);
+}
+.text2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  min-width: 136px;
+}
+.frame2,
+.users {
+  align-items: flex-start;
+  max-width: 100%;
+}
+.users {
+  width: 367px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  font-size: var(--font-size-9xl);
+  color: var(--color-gray-100);
+}
+.frame2 {
+  width: 575px;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 166px;
+  min-width: 575px;
+  font-size: 14px;
+  color: var(--color-gray-800);
+}
+.frame2,
+.home,
+.sidePanel {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+}
+.sidePanel {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: center;
+  gap: 54px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: rgba(17, 16, 28, 0.5);
+  font-family: var(--font-suisse-intl);
+}
+.home {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-gray-400);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-13xl) var(--padding-81xl) var(--padding-81xl)
+    var(--padding-31xl);
+  box-sizing: border-box;
+  gap: var(--gap-55xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1200px) {
+  .frame {
+    padding-left: var(--padding-234xl);
+    padding-right: var(--padding-234xl);
+    box-sizing: border-box;
+  }
+  .frame2 {
+    flex: 1;
+  }
+  .sidePanel {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .manageYourFinancesContainer {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .frame {
+    padding-left: var(--padding-107xl);
+    padding-right: var(--padding-107xl);
+    box-sizing: border-box;
+  }
+  .frame1 {
+    min-width: 100%;
+  }
+  .block2 {
+    gap: var(--gap-xl);
+  }
+  .frame2 {
+    gap: var(--gap-64xl);
+    min-width: 100%;
+  }
+  .sidePanel {
+    gap: 27px;
+  }
+  .home {
+    gap: 37px;
+    padding-left: var(--padding-6xl);
+    padding-right: var(--padding-31xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .frame {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .currencySymbol {
+    font-size: 19px;
+  }
+  .manageYourFinancesContainer {
+    font-size: 34px;
+  }
+  .users1 {
+    font-size: 22px;
+  }
+  .users {
+    flex-wrap: wrap;
+    gap: var(--gap-base);
+  }
+  .frame2 {
+    gap: 41px;
+  }
+  .home {
+    gap: 18px;
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

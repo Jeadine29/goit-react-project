@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("/public/fonnts.com-Suisse_Intl_Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("/public/fonnts.com-Suisse_Intl_Bold.ttf");
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-suisse-intl: "Suisse Intl";
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-xs: 12px;
+  --font-size-9xl: 28px;
+  --font-size-5xl: 24px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+  --color-gray-100: #fafafa;
+  --color-gray-200: #29292b;
+  --color-gray-300: #171719;
+  --color-gray-400: #0c0d0d;
+  --color-gray-500: rgba(250, 250, 250, 0.2);
+  --color-gray-600: rgba(250, 250, 250, 0.5);
+  --color-gray-700: rgba(250, 250, 250, 0.1);
+  --color-gray-800: rgba(250, 250, 250, 0.4);
+  --color-mediumspringgreen: #0ef387;
+  --color-darkslategray: #444446;
+  --green: #4dc274;
+  --color-mediumseagreen-100: #0ebb69;
+  --user-accent-color-uac-light: #0a7aff;
+  --system-grey-dark-sg-d-2: #636366;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+  --gap-xl: 20px;
+  --gap-5xs: 8px;
+  --gap-sm: 14px;
+  --gap-67xl: 86px;
+  --gap-55xl: 74px;
+  --gap-47xl: 66px;
+  --gap-64xl: 83px;
+  --gap-6xs: 7px;
+  --gap-base: 16px;
+
+  /* Paddings */
+  --padding-xs: 12px;
+  --padding-37xl: 56px;
+  --padding-lg: 18px;
+  --padding-sm: 14px;
+  --padding-173xl: 192px;
+  --padding-5xs: 8px;
+  --padding-base: 16px;
+  --padding-144xl: 163px;
+  --padding-4xl: 23px;
+  --padding-25xl: 44px;
+  --padding-385xl: 404px;
+  --padding-115xl: 134px;
+  --padding-13xl: 32px;
+  --padding-81xl: 100px;
+  --padding-31xl: 50px;
+  --padding-6xl: 25px;
+  --padding-xl: 20px;
+  --padding-234xl: 253px;
+  --padding-107xl: 126px;
+
+  /* Border radiuses */
+  --br-mini: 15px;
+  --br-xs: 12px;
+  --br-21xl: 40px;
+  --br-81xl: 100px;
+  --br-11xl: 30px;
+  --br-3xs: 10px;
+  --br-smi: 13px;
+  --br-8xs: 5px;
+  --br-xl: 20px;
+}
