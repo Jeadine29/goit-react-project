@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals.js";
+import reportWebVitals from "./re";
 import { BrowserRouter } from "react-router-dom";
 import "./global.css";
 

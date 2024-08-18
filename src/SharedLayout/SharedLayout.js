@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-import BgImageWrapper from './BgImageWrapper';
+import BgImageWrapper from '../components/BgImageWrapper/BgImageWrapper';
 
 const SharedLayout = () => {
   return (
