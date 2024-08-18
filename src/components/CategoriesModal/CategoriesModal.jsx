@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addCategory, deleteCategory, editCategory } from '../../redux/Category/operations';
-import { selectCategories } from '../../redux/Category/categorySlice';
+import { selectCategories } from '../../redux/Category/CategorySlice';
 import { Icon } from '../../components/Icon/Icon';
 import s from './CategoriesModal.module.css';
 import { getTransactions } from '../../redux/Transaction/operations';

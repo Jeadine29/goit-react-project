@@ -1,12 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-
-import { Icon } from 'components';
+import { Icon } from '../Icon/Icon'; // Update the import path if necessary
 import { selectUser } from '../../redux/User/userSlice';
-import { getCurrencyChar, getPath } from '../../javascripts';
+import { retrieveCurrency, determinePath } from '../../helpers';
 
 import s from './TransactionsTotal.module.css';
+
+// Ensure these helper functions are correctly implemented in your helpers module
+const getCurrencyChar = (currency) => retrieveCurrency(currency); 
+const getPath = (location) => determinePath(location);
 
 export const TransactionsTotal = ({
   totalAllExpenses = null,
@@ -35,7 +38,7 @@ export const TransactionsTotal = ({
             <h3 className={s.amountTitle}>Total Income</h3>
             <p className={s.amountDescr}>
               {currencyChar}
-              {totalAllIncomes || totalIncomes}
+              {totalAllIncomes !== null ? totalAllIncomes : totalIncomes}
             </p>
           </div>
         </li>
@@ -49,7 +52,7 @@ export const TransactionsTotal = ({
             <h3 className={s.amountTitle}>Total Expense</h3>
             <p className={s.amountDescr}>
               {currencyChar}
-              {totalAllExpenses || totalExpenses}
+              {totalAllExpenses !== null ? totalAllExpenses : totalExpenses}
             </p>
           </div>
         </li>

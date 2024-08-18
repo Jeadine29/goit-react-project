@@ -14,7 +14,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './Auth/authSlice';
 import { userReducer } from './User/userSlice';
-import { categorySliceReducer } from './Category/categorySlice';
+import { categorySliceReducer } from './Category/CategorySlice';
 import { transactionSliceReducer } from './Transaction/TransactionSlice';
 import { filterValueReducer } from './Filter/FilterSlice';
 

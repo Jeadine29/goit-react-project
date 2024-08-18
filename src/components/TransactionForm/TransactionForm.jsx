@@ -8,12 +8,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useNavigate } from 'react-router-dom';
 import { Icon, Modal } from 'components';
-import { CategoriesModal } from '../CatergoriesModal/CategoriesModal';
+import { CategoriesModal } from '../CategoriesModal/CategoriesModal';
 import { selectUser } from '../../redux/User/userSlice';
-import { getFormattedDate, getFormattedTime } from '../../javascripts';
+import { formatDate, formatTime } from '../../helpers'; // Correct import
 import { selectTransactionsError } from '../../redux/Transaction/TransactionSlice';
 import { transactionSchema } from '../../schemas/validationSchema';
-// import './DatePicke.css';
 import s from './TransactionForm.module.css';
 
 export const TransactionForm = ({
@@ -54,8 +53,8 @@ export const TransactionForm = ({
 
   const setDefaultValues = useCallback(() => {
     setValue('type', transactionsType);
-    setValue('date', getFormattedDate(new Date()));
-    setValue('time', getFormattedTime());
+    setValue('date', formatDate(new Date()));
+    setValue('time', formatTime());
     setValue('category', '');
     setCategoryId('');
     setValue('sum', '');
@@ -88,7 +87,7 @@ export const TransactionForm = ({
   };
 
   const handleChangeDate = date => {
-    const formattedDate = getFormattedDate(date);
+    const formattedDate = formatDate(date);
     setValue('date', formattedDate, { shouldValidate: true });
   };
 

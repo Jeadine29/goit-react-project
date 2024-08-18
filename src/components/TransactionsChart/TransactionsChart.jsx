@@ -1,12 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import { Chart } from '../PieChart/PieChart';
-import { countCategories } from '../../javascripts/countCategories';
+import { calculateCategories } from '../../helpers/calculateCategories'; // Ensure this function is correctly implemented
 import { selectTransactions, selectTransactionsError } from '../../redux/Transaction/TransactionSlice';
 import { selectUser } from '../../redux/User/userSlice';
-import { fetchCurrentUser } from '../../redux/User/operations';
-import warningImg from '../../assets/images/no_data_abstract.png';
-import errorImg from '../../assets/images/server-error.png';
 import s from './TransactionsChart.module.css';
 
 export const TransactionsChart = ({ transactionsType }) => {
@@ -29,36 +26,33 @@ export const TransactionsChart = ({ transactionsType }) => {
   useEffect(() => {
     if (data === null) return;
 
-    dispatch(fetchCurrentUser())
-      .unwrap()
-      .then(() => {
-        setCategoriesData(countCategories(data, totalRef.current));
-      })
-      .catch();
-  }, [data, dispatch]);
+    // Calculate categories based on the data and total value
+    setCategoriesData(calculateCategories(data, totalRef.current));
+  }, [data]);
 
-  if (data === null || categoriesData === null) return;
-
-  if (error)
+  if (error) {
     return (
       <div className={s.warningWrapper}>
         <h2 className={s.warningTitle}>
           Sorry, something went wrong. Please try again...
         </h2>
-        <img className={s.imgNoData} src={errorImg} alt="Error fetch" />
+        <p className={s.errorMessage}>An error occurred while fetching the data.</p>
       </div>
     );
+  }
+
+  if (data === null || categoriesData === null) return null;
 
   return !categoriesData.length ? (
     <div className={s.warningWrapper}>
       <h2 className={s.warningTitle}>
-        You don't have any {transactionsType.toLowerCase()} in this month.
+        You don't have any {transactionsType.toLowerCase()} this month.
       </h2>
-      <img className={s.imgNoTransactions} src={warningImg} alt="No data" />
+      <p className={s.noDataMessage}>No data available for this period.</p>
     </div>
   ) : (
     <div className={s.chartContainer}>
-      <h3 className={s.title}>{transactionsType} categories</h3>
+      <h3 className={s.title}>{transactionsType} Categories</h3>
       <div className={s.statsWrapper}>
         <div className={s.pieChartWrapper}>
           <Chart data={categoriesData} />

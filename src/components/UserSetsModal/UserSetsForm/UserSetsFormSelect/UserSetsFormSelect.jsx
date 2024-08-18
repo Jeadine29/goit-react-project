@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { UserSetsFormList } from './UserSetsFormList';
 import { Icon } from '../../../Icon/Icon';
-import { choseLabel, options } from '../../../../javascripts/choseLabel';
+import { selectLabel, options } from '../../../../helpers/selectLabel';
 import s from './UserSetsFormSelect.module.css';
 
 export const UserSetsFormSelect = ({
@@ -13,17 +13,30 @@ export const UserSetsFormSelect = ({
   const box = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = e => {
-    setIsOpen(!isOpen);
+  const handleToggle = () => {
+    setIsOpen(prev => !prev);
   };
 
-  const handleChose = element => {
+  const handleChose = (element) => {
     setCurrency(element.value);
     setValue('currency', element.value);
+    setIsOpen(false); // Close the dropdown after selection
+  };
+
+  // Ensure choseLabel function is defined
+  const choseLabel = (currency) => {
+    // Example implementation, replace with your actual logic
+    return selectLabel(currency) || 'Select currency';
   };
 
   return (
-    <div ref={box} onClick={handleToggle} className={s.container}>
+    <div
+      ref={box}
+      onClick={handleToggle}
+      className={s.container}
+      aria-expanded={isOpen}
+      aria-haspopup="listbox"
+    >
       <p className={s.text}>{choseLabel(currency)}</p>
       <div className={s.iconWrapper}>
         <Icon
@@ -38,9 +51,15 @@ export const UserSetsFormSelect = ({
           handleChose={handleChose}
           boxRef={box}
           handleToggle={handleToggle}
+          aria-labelledby="select-label"
         />
       )}
-      <input className={s.input} {...register('currency')} value={currency} />
+      <input 
+        className={s.input} 
+        {...register('currency')} 
+        readOnly
+        aria-hidden="true"
+      />
     </div>
   );
 };

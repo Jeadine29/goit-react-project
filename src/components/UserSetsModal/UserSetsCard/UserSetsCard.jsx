@@ -4,13 +4,13 @@ import Resizer from 'react-image-file-resizer';
 import Loader from '../../Loader/Loader';
 import { selectUser } from '../../../redux/User/userSlice';
 import { changeUserAvatar, deleteUserAvatar } from '../../../redux/User/operations';
-import { useIsLoading } from 'hooks';
-import { firstLetter } from '../../../javascripts/firstLetter';
-import { takeId } from '../../../javascripts/takeId';
+import { useIsLoading } from '../../../hooks';
+import { capitalizeFirstLetter } from '../../../helpers/capitalizeFirstLetter';
+import { extractId } from '../../../helpers/extractId'; // Ensure correct function import
 import s from './UserSetsCard.module.css';
 
-const resizeFile = file =>
-  new Promise(resolve => {
+const resizeFile = (file) =>
+  new Promise((resolve) => {
     Resizer.imageFileResizer(
       file,
       300,
@@ -18,7 +18,7 @@ const resizeFile = file =>
       'JPEG',
       100,
       0,
-      uri => {
+      (uri) => {
         resolve(uri);
       },
       'file'
@@ -31,9 +31,9 @@ export const UserSetsCard = () => {
   const fileInput = useRef(null);
 
   const customDispatch = useIsLoading();
-  const noAvatar = avatarUrl === null;
+  const noAvatar = !avatarUrl;
 
-  const handleUploadAvatar = async e => {
+  const handleUploadAvatar = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
     const image = await resizeFile(file);
@@ -45,8 +45,8 @@ export const UserSetsCard = () => {
   };
 
   const handleDeletePhoto = () => {
-    const id = takeId(avatarUrl);
-
+    if (!avatarUrl) return;
+    const id = extractId(avatarUrl); // Ensure correct function usage
     customDispatch(deleteUserAvatar, id, setIsLoading);
   };
 
@@ -54,13 +54,13 @@ export const UserSetsCard = () => {
     <div className={s.cardWrapper}>
       <div className={s.photoWrapper}>
         {noAvatar && !isLoading && (
-          <p className={s.text}>{firstLetter(name)}</p>
+          <p className={s.text}>{capitalizeFirstLetter(name)}</p>
         )}
         {!noAvatar && !isLoading && (
           <img
             className={s.photo}
             src={avatarUrl}
-            alt="user avatar"
+            alt="User avatar"
             width={150}
           />
         )}

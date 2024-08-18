@@ -1,18 +1,20 @@
-import { getColors } from './getColors';
-import { getCurrentMoth } from './getCurrentMonth';
+import { fetchColors } from './fetchColors'; // Ensure this function is properly implemented
+import { currentMonth } from './currentMonth'; // Fixed typo
 
 export function calculateCategories(data, total) {
   if (!data.length) return [];
 
   const categorySum = {};
-  const { firstDayOfMonth, lastDayOfMonth } = getCurrentMoth();
+  const { firstDayOfMonth, lastDayOfMonth } = currentMonth(); // Fixed typo
 
+  // Filter transactions for the current month
   const currentMonthTransactions = data.filter(
     item => item.date >= firstDayOfMonth && item.date <= lastDayOfMonth
   );
 
   if (!currentMonthTransactions.length) return [];
 
+  // Sum up values for each category
   currentMonthTransactions.forEach(transaction => {
     const { category, sum } = transaction;
     if (categorySum[category.categoryName]) {
@@ -24,6 +26,7 @@ export function calculateCategories(data, total) {
 
   const categoriesData = [];
 
+  // Create categories data with percentages
   Object.entries(categorySum).forEach(([key, value]) => {
     let percent = Number(((value / total) * 100).toFixed(1));
     categoriesData.push({ name: key, value: percent });
@@ -34,19 +37,25 @@ export function calculateCategories(data, total) {
     0
   );
 
+  // Ensure percentages sum up to 100%
   const sortedCategories = categoriesData.sort((a, b) => b.value - a.value);
 
   if (sumPercentages !== 100) {
     const diff = 100 - sumPercentages;
 
-    if (sortedCategories[sortedCategories.length - 1].value > 1) {
-      sortedCategories[sortedCategories.length - 1].value = Number(
-        (sortedCategories[sortedCategories.length - 1].value + diff).toFixed(1)
-      );
-    } else {
-      sortedCategories[sortedCategories.length - 1].value = 0.1;
+    if (sortedCategories.length) {
+      const lastIndex = sortedCategories.length - 1;
+
+      if (sortedCategories[lastIndex].value > 1) {
+        sortedCategories[lastIndex].value = Number(
+          (sortedCategories[lastIndex].value + diff).toFixed(1)
+        );
+      } else {
+        sortedCategories[lastIndex].value = 0.1; // Ensure a minimum value for visibility
+      }
     }
   }
 
-  return getColors(sortedCategories);
+  // Ensure getColors is properly implemented
+  return fetchColors(sortedCategories);
 }

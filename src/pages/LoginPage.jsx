@@ -1,6 +1,6 @@
 import RegisterForm from 'components/RegisterForm/RegisterForm';
 // import LoginForm from '../components/LoginForm/LoginForm';
-import s from './Login.module.css';
+import s from './LoginPage.module.css';
 
 const Login = () => {
   return (

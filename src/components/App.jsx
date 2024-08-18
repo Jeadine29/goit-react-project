@@ -1,3 +1,4 @@
+// components/App.jsx
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, lazy } from 'react';
@@ -9,10 +10,10 @@ import { selectIsRefreshing, selectIsLoggedIn } from '../redux/Auth/authSlice';
 import Loader from './Loader/Loader';
 
 const Home = lazy(() => import('../pages/Home'));
-const Login = lazy(() => import('../pages/Login'));
-const Register = lazy(() => import('../pages/Register'));
-const MainTransactions = lazy(() => import('../pages/MainTransactions'));
-const TransactionsHistory = lazy(() => import('../pages/TransactionsHistory'));
+const Login = lazy(() => import('../pages/LoginPage'));
+const Register = lazy(() => import('../pages/RegisterPage'));
+const MainTransactions = lazy(() => import('../pages/MainTransactionsPage'));
+const TransactionsHistory = lazy(() => import('../pages/TransactionsHistoryPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
