@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { UserSetsFormList } from './UserSetsFormList';
+import { UserSetsFormList } from './UserPreferencesList';
 import { Icon } from '../../../Icon/Icon';
 import { selectLabel, options } from '../../../../helpers/selectLabel';
-import s from './UserSetsFormSelect.module.css';
+import s from './UserPreferencesSelect.module.css';
 
 export const UserSetsFormSelect = ({
   register,

@@ -7,7 +7,7 @@ import { changeUserAvatar, deleteUserAvatar } from '../../../redux/User/operatio
 import { useIsLoading } from '../../../hooks';
 import { capitalizeFirstLetter } from '../../../helpers/capitalizeFirstLetter';
 import { extractId } from '../../../helpers/extractId'; // Ensure correct function import
-import s from './UserSetsCard.module.css';
+import s from './ProfileSettings.module.css';
 
 const resizeFile = (file) =>
   new Promise((resolve) => {

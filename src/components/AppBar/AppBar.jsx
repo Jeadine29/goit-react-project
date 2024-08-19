@@ -10,7 +10,7 @@ import UserBarBtn from './UserBarBtn/UserBarBtn';
 import { useModal } from 'hooks';
 import { LogOut} from '../../components/Logout/Logout';
 import { Modal } from '../../components/Modal/Modal';
-import { UserSetsModal } from '../UserSetsModal/UserSetsModal';
+import { UserSetsModal } from '../UserProfileModal/UserProfileModal';
 import headerStyles from './AppBar.module.css';
 
 export const AppBar = () => {

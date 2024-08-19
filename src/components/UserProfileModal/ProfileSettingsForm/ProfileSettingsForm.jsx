@@ -5,11 +5,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 import { selectCurrency, selectName } from '../../../redux/User/userSlice';
 import { changeUserInfo } from '../../../redux/User/operations';
-import { UserSetsFormSelect } from './UserSetsFormSelect/UserSetsFormSelect';
+import { UserSetsFormSelect } from './UserPreferencesSelect/UserPreferencesSelect';
 import { useIsLoading } from '../../../hooks';
 import { userSchema } from '../../../schemas/userSchema';
 
-import s from './UserSetsForm.module.css';
+import s from './ProfileSettingsForm.module.css';
 
 export const UserSetsForm = ({ toggleModal }) => {
   const [isLoading, setIsLoading] = useState(false);

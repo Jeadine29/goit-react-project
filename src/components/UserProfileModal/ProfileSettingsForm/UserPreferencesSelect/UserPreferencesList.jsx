@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import s from './UserSetsFormList.module.css';
+import s from './UserPreferencesList.module.css';
 
 export const UserSetsFormList = ({
   options,
