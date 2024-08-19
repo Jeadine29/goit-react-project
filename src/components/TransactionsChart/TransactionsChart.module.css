@@ -116,10 +116,11 @@
   @media only screen and (min-width: 768px) {
     .warningWrapper {
       padding-top: 30px;
-      padding-bottom: 245px;
+      /* padding-bottom: 245px; */
       padding-inline: 40px;
     }
   }
+
   .warningTitle {
     text-align: center;
     margin-inline: auto;
