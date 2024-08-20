@@ -29,7 +29,7 @@ const TransactionsHistoryNav = ({
           )}
           onClick={() => handleButtonAndToggleMenu('expense')}
         >
-          {isMobileScreen ? 'All Expense' : 'Expense'}
+          {isMobileScreen ? 'All Expenses' : 'Expenses'}
         </button>
       </Link>
       <Link to="/transactions/history/incomes">
