@@ -8,10 +8,10 @@ import { selectIsLoggedIn } from '../../redux/Auth/authSlice';
 import TransactionHistoryNav from './TransactionHistoryNav/TransactionHistoryNav';
 import UserBarBtn from './UserBarBtn/UserBarBtn';
 import { useModal } from 'hooks';
-import { LogOut} from '../../components/Logout/Logout';
-import { Modal } from '../../components/Modal/Modal';
-import { UserSetsModal } from '../UserProfileModal/UserProfileModal';
-import headerStyles from './AppBar.module.css';
+import { LogOut} from '../Logout/Logout';
+import { Modal } from '../Modal/Modal';
+import { UserSetsModal } from '../UserSetsModal/UserSetsModal';
+import headerStyles from './Header.module.css';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

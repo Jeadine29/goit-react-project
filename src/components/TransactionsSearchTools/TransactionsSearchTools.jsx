@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { changeDate, changeFilter, resetFilter, selectDate, selectFilter } from '../../redux/Filter/FilterSlice';
 import { Icon } from '../Icon/Icon';
-import { UniversalButton } from '../ActionButton/ActionButton';
+// import { UniversalButton } from '../ActionButton/ActionButton';
 import s from './TransactionsSearchTools.module.css';
 
 export const TransactionsSearchTools = ({ handleOpenModal, type }) => {
@@ -56,8 +56,6 @@ export const TransactionsSearchTools = ({ handleOpenModal, type }) => {
           />
           <Icon name="calendar" className={s.iconDate} size="20" />
         </div>
-        <UniversalButton action={handleResetFilter} type="reset" />
-        <UniversalButton className={s.addBtn} action={handleOpenModal} />
       </form>
     </div>
   );

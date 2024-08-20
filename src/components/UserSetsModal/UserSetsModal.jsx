@@ -1,7 +1,7 @@
 
 import { UserSetsCard } from './ProfileSettings/ProfileSettings';
 import { UserSetsForm } from './ProfileSettingsForm/ProfileSettingsForm';
-import s from './UserProfileModal.module.css';
+import s from './UserSetsModal.module.css';
 
 export const UserSetsModal = ({ toggleModal }) => {
   return (
