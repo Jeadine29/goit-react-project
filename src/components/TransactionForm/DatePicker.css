@@ -2,17 +2,20 @@
     border-radius: 8px;
     border: 0px;
     background: var(--button-color);
+    border-radius: 8px;
   }
   
   .react-datepicker__header {
     background: var(--button-color);
-  
+    background-color: #0EF387;
     border-bottom: 1px solid var(--background-color);
+
   }
   
   .react-datepicker__day {
     transition: background-color, var(--transition), var(--transition-delay);
     border-radius: 50%;
+    background-color: black;
   }
   
   .react-datepicker__day--selected,
@@ -44,6 +47,7 @@
   .react-datepicker__navigation-icon::before,
   .react-datepicker__navigation:hover *::before {
     border-color: var(--background-color);
+    
   }
   
   .fixed-height-calendar {
