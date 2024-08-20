@@ -1,5 +1,5 @@
 {
-  "name": "react-homework-template",
+  "name": "ExpenseTracker",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://jeadine29.github.io/goit-react-project/",
@@ -66,6 +66,7 @@
   },
   "devDependencies": {
     "customize-cra": "^1.0.0",
+    "gh-pages": "^6.1.1",
     "react-app-rewired": "^2.2.1"
   }
 }
