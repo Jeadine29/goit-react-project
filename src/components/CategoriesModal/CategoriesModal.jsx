@@ -85,81 +85,82 @@ export const CategoriesModal = ({ type, transportCategory }) => {
   }, [isEditMode]);
 
   return (
-    <div className={s.mainBox}>
-      <div className={s.box}>
-        <h2 className={s.mainTitle}>
-          {type === 'expenses' ? 'Expenses' : 'Incomes'}
-        </h2>
-        <h3 className={s.title}>All Category</h3>
+    <>
+      <div className={s.overlay}></div> {/* Overlay background */}
+      <div className={s.mainBox}>
+        <div className={s.box}>
+          <h2 className={s.mainTitle}>
+            {type === 'expenses' ? 'Expenses' : 'Incomes'}
+          </h2>
+          <h3 className={s.title}>All Category</h3>
 
-        <ul className={`${s.listWrapper} scroll scrollB`} ref={ulRef}>
-          {categories[type].length === 0 ? (
-            <li className={s.noobjects}>
-              <p className={s.noobjectsP}>There are no categories</p>
-            </li>
-          ) : (
-            categories[type].map(item => (
-              <li className={s.listItem} key={item._id}>
-                <p>{item.categoryName}</p>
-
-                <ul className={s.listSVG}>
-                  <li className={s.listSVGitem}>
-                    <button
-                      className={s.buttonSVG}
-                      onClick={() => handleGetCategory(item)}
-                    >
-                      <Icon className={s.icon} name="check" size="16" />
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={s.buttonSVG}
-                      onClick={() =>
-                        handleChangeCategory(item._id, item.categoryName)
-                      }
-                    >
-                      <Icon className={s.icon} name="edit" size="16" />
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={s.buttonSVG}
-                      onClick={() => handleDeleteCategory(item._id, type)}
-                      disabled={isButtonDisabled}
-                    >
-                      <Icon className={s.icon} name="trash-bin" size="16" />
-                    </button>
-                  </li>
-                </ul>
+          <ul className={`${s.listWrapper} scroll scrollB`} ref={ulRef}>
+            {categories[type].length === 0 ? (
+              <li className={s.noobjects}>
+                <p className={s.noobjectsP}>There are no categories</p>
               </li>
-            ))
-          )}
-        </ul>
-      </div>
+            ) : (
+              categories[type].map(item => (
+                <li className={s.listItem} key={item._id}>
+                  <p>{item.categoryName}</p>
 
-      <form className={s.formStyle} onSubmit={handleSubmitCategory}>
-        <label className={s.labelCategory} htmlFor="categoryInput">
-          {isEditMode ? 'Edit Category' : 'New Category'}
-        </label>
-        <div className={s.inputBox}>
-          <input
-            type="text"
-            id="categoryInput"
-            placeholder="Enter the text"
-            className={s.inputCategory}
-            onChange={handleInputChange}
-            value={categoryName}
-          />
-
-          <button
-            className={s.subbmitButton}
-            type="submit"
-            disabled={categoryName.length === 0}
-          >
-            {isEditMode ? 'Edit' : 'Add'}
-          </button>
+                  <ul className={s.listSVG}>
+                    <li className={s.listSVGitem}>
+                      <button
+                        className={s.buttonSVG}
+                        onClick={() => handleGetCategory(item)}
+                      >
+                        <Icon className={s.icon} name="check" size="16" />
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className={s.buttonSVG}
+                        onClick={() => handleChangeCategory(item._id, item.categoryName)}
+                      >
+                        <Icon className={s.icon} name="edit" size="16" />
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className={s.buttonSVG}
+                        onClick={() => handleDeleteCategory(item._id, type)}
+                        disabled={isButtonDisabled}
+                      >
+                        <Icon className={s.icon} name="trash-bin" size="16" />
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              ))
+            )}
+          </ul>
         </div>
-      </form>
-    </div>
+
+        <form className={s.formStyle} onSubmit={handleSubmitCategory}>
+          <label className={s.labelCategory} htmlFor="categoryInput">
+            {isEditMode ? 'Edit Category' : 'New Category'}
+          </label>
+          <div className={s.inputBox}>
+            <input
+              type="text"
+              id="categoryInput"
+              placeholder="Enter the text"
+              className={s.inputCategory}
+              onChange={handleInputChange}
+              value={categoryName}
+            />
+
+            <button
+              className={s.subbmitButton}
+              type="submit"
+              disabled={categoryName.length === 0}
+            >
+              {isEditMode ? 'Edit' : 'Add'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };

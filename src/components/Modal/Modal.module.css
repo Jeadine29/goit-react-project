@@ -12,12 +12,12 @@
     background: var(--black06);
   }
   
-  /* .modal {
+  .modal {
     position: relative;
     border: 1px solid var(--regular-text-color01);
     border-radius: 30px;
     background-color: #171719;
-  } */
+  }
   @media screen and (max-width: 374.99px) {
     .profile {
       padding: 40px clamp(0px, 6vw, 20px) 60px;
