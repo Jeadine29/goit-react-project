@@ -1,24 +1,20 @@
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { changeDate, changeFilter, resetFilter, selectDate, selectFilter } from '../../redux/Filter/FilterSlice';
 import { Icon } from '../Icon/Icon';
-// import { UniversalButton } from '../ActionButton/ActionButton';
 import s from './TransactionsSearchTools.module.css';
 
 export const TransactionsSearchTools = ({ handleOpenModal, type }) => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
+  const date = useSelector(selectDate);
+
   const changeFilterValue = e => {
     dispatch(changeFilter(e.target.value));
   };
 
-  useEffect(() => {
-    dispatch(resetFilter());
-  }, [type, dispatch]);
-
-  const date = useSelector(selectDate);
   const changeDateValue = e => {
     if (!e) {
       dispatch(changeDate(format(new Date(), 'yyyy-MM-dd')));
@@ -27,9 +23,9 @@ export const TransactionsSearchTools = ({ handleOpenModal, type }) => {
     dispatch(changeDate(format(e, 'yyyy-MM-dd')));
   };
 
-  const handleResetFilter = () => {
+  useEffect(() => {
     dispatch(resetFilter());
-  };
+  }, [type, dispatch]);
 
   return (
     <div className={s.formContainer}>
