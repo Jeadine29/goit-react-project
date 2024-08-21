@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import classNames from 'classnames';
 import { yupResolver } from '@hookform/resolvers/yup';
 import 'react-datepicker/dist/react-datepicker.css';
+import './DatePicker.css'; // Import custom CSS
 import { useNavigate } from 'react-router-dom';
 import { Icon, Modal } from 'components';
 import { CategoriesModal } from '../CategoriesModal/CategoriesModal';
