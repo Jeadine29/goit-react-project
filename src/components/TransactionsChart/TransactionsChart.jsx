@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import { Chart } from '../PieChart/PieChart';
 import { calculateCategories } from '../../helpers/calculateCategories'; // Ensure this function is correctly implemented
@@ -8,7 +8,6 @@ import s from './TransactionsChart.module.css';
 
 export const TransactionsChart = ({ transactionsType }) => {
   const [categoriesData, setCategoriesData] = useState(null);
-  const dispatch = useDispatch();
 
   const { totalIncomes, totalExpenses } = useSelector(selectUser);
   const error = useSelector(selectTransactionsError);
@@ -28,7 +27,7 @@ export const TransactionsChart = ({ transactionsType }) => {
 
     // Calculate categories based on the data and total value
     setCategoriesData(calculateCategories(data, totalRef.current));
-  }, [data]);
+  }, [data, transactionsType]);
 
   if (error) {
     return (

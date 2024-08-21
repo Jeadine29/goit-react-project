@@ -1,3 +1,4 @@
+// helpers/calculateCategories.js
 import { fetchColors } from './fetchColors'; // Ensure this function is properly implemented
 import { currentMonth } from './currentMonth'; // Fixed typo
 
@@ -28,16 +29,16 @@ export function calculateCategories(data, total) {
 
   // Create categories data with percentages
   Object.entries(categorySum).forEach(([key, value]) => {
-    let percent = Number(((value / total) * 100).toFixed(1));
-    categoriesData.push({ name: key, value: percent });
+    const percent = ((value / total) * 100).toFixed(1); // Ensure 1 decimal place for precision
+    categoriesData.push({ name: key, value: parseFloat(percent) }); // Convert to float for consistency
   });
 
+  // Ensure percentages sum up to 100%
   const sumPercentages = categoriesData.reduce(
     (total, item) => total + item.value,
     0
   );
 
-  // Ensure percentages sum up to 100%
   const sortedCategories = categoriesData.sort((a, b) => b.value - a.value);
 
   if (sumPercentages !== 100) {
@@ -45,17 +46,16 @@ export function calculateCategories(data, total) {
 
     if (sortedCategories.length) {
       const lastIndex = sortedCategories.length - 1;
+      const lastCategory = sortedCategories[lastIndex];
 
-      if (sortedCategories[lastIndex].value > 1) {
-        sortedCategories[lastIndex].value = Number(
-          (sortedCategories[lastIndex].value + diff).toFixed(1)
-        );
+      if (lastCategory.value > 1) {
+        lastCategory.value = parseFloat((lastCategory.value + diff).toFixed(1));
       } else {
-        sortedCategories[lastIndex].value = 0.1; // Ensure a minimum value for visibility
+        lastCategory.value = 0.1; // Ensure a minimum value for visibility
       }
     }
   }
 
-  // Ensure getColors is properly implemented
+  // Ensure fetchColors is properly implemented
   return fetchColors(sortedCategories);
 }
